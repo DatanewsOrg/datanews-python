@@ -9,6 +9,7 @@ class Requestor(object):
         self.api_key = datanews.api_key
 
     def request(self, method, url, params=None, data=None):
+        self._validate_key(self.api_key)
         if method == 'get':
             return self._get(url, params)
         elif method == 'post':
@@ -19,7 +20,6 @@ class Requestor(object):
             raise ValueError('Invalid method value \'%s\'' % method)
 
     def _get(self, url, params):
-        self._validate_key(self.api_key)
         if params:
             qstring = urlencode(params, doseq=True)
             url = url + '?' + qstring
@@ -27,12 +27,10 @@ class Requestor(object):
             requests.get(url, headers=self._build_headers()))
 
     def _post(self, url, data):
-        self._validate_key(self.api_key)
         return self._handle_response(
             requests.post(url, json=data, headers=self._build_headers()))
 
     def _delete(self, url, data):
-        self._validate_key(self.api_key)
         return self._handle_response(
             requests.delete(url, json=data, headers=self._build_headers()))
 
