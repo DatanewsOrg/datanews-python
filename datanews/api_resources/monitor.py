@@ -26,13 +26,13 @@ class Monitor(object):
     def delete(id):
         Monitor._validate_id(id, 'Monitor id should not be None.')
         url = BASE_URL % ('/delete/%s' % id)
-        return Requestor().request('delete', url)
+        return Requestor().request('delete', url=url)
 
     @staticmethod
     def latest(run_id):
         Monitor._validate_id(run_id, 'Run id should not be None.')
         url = BASE_URL % ('/latest/%s' % run_id)
-        return Requestor().request('get', url)
+        return Requestor().request('get', url=url)
 
     @staticmethod
     def _validate_id(id, message):
