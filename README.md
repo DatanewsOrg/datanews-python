@@ -3,6 +3,8 @@
 This is a client library for python 3, built to
 interact with the Datanews API. 
 
+**STATUS**: Not deployed.
+
 ## Install
 
 Use pip to install the library.
