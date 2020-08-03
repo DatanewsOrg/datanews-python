@@ -3,14 +3,12 @@
 This is a client library for python 3, built to
 interact with the Datanews API. 
 
-**STATUS**: Not deployed.
-
 ## Install
 
 Use pip to install the library.
 
 ```python
-pip install datanews-python
+pip install datanews
 ```
 
 ## Usage
@@ -24,7 +22,8 @@ queries by calling corresponding functions of the library.
 import datanews
 datanews.api_key = 'API_KEY'
 
-articles = datanews.headlines(q='SpaceX')
+response = datanews.headlines(q='SpaceX')
+articles = response['hits']
 print(len(articles)) 
 ```
 

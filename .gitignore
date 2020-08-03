@@ -1,2 +1,5 @@
 datanews/__pycache__/*
 datanews/api_resources/__pycache__/*
+dist/*
+build/*
+datanews.egg-info/*
