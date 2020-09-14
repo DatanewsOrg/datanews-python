@@ -41,7 +41,7 @@ class Requestor(object):
     @staticmethod
     def _validate_key(api_key):
         if not api_key or type(api_key) is not str:
-            raise ValueError('Invalid api ley \'%s\'' % api_key)
+            raise ValueError('Invalid api key \'%s\'' % api_key)
 
     @staticmethod
     def _handle_response(response):

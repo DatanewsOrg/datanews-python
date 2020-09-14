@@ -9,7 +9,7 @@ with open('requirements.txt', 'r') as f:
 
 setup(
     name='datanews',
-    version="0.0.5",
+    version="0.0.6",
     author="Vladyslav Mokrousov",
     author_email="mokrousov@datanews.io",
     description="Python client library for Datanews API",
